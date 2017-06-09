@@ -1,0 +1,2 @@
+//likes: Number,
+//dislikes: Number,

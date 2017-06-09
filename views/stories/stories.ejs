@@ -1,0 +1,40 @@
+<!-- HEADER -->
+<% include ../partials/header %>
+
+
+
+
+<div class="container text-center">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Stories Page</h1>
+            <p>
+                Collaborate with other writers to create wonderful stories you can share.
+            </p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/stories/create-story">Start a new story!</a>
+            </p>
+        </div>
+    </header>
+
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% storyList.forEach(function(story) { %>
+        <div class="col-md3 col-sm-6">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4><%= story.title %></h4>
+                    <h5>(<%= story.genre %>)</h4>
+                    <p>
+                        <a href="/stories/<%= story._id %>" class="btn btn-primary">Read Story</a>
+                    </p>
+                </div>
+                <img src="<%= story.image %>">
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
